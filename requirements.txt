@@ -1,0 +1,4 @@
+flask==2.1.1
+flask-socketio==5.1.1
+eventlet==0.33.1
+https://github.com/benoitc/gunicorn/archive/refs/heads/master.zip#egg=gunicorn==20.1.0
