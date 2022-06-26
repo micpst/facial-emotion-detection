@@ -1,5 +1,7 @@
 # Facial Emotion Detection
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/micpst/facial-emotion-detection/blob/master/notebook/facial-emotion-detection.ipynb)
+
 ## Quick start
 Build the development container image:
 ```
