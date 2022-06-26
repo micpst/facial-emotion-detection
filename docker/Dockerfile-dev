@@ -9,8 +9,7 @@ COPY requirements.txt /opt/requirements/requirements.txt
 RUN apt-get update && \
     pip install -r /opt/requirements/requirements.txt
 
-COPY . /opt/code
 WORKDIR /opt/code
-
 CMD [ "flask", "run", "--host", "0.0.0.0" ]
+
 EXPOSE 5000
