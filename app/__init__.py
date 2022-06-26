@@ -2,10 +2,12 @@ from typing import Optional
 
 from flask import Flask
 from flask_socketio import SocketIO
-from tensorflow.keras.models import model_from_json
+from tensorflow.python.keras.models import Model, load_model
+
 
 sio: SocketIO = SocketIO(path='/socket')
-model: Optional[str] = None
+model: Optional[Model] = load_model('tmp/model.h5')
+
 
 def create_app(config_name: str) -> Flask:
     """
@@ -19,10 +21,5 @@ def create_app(config_name: str) -> Flask:
     with app.app_context():
         from app.main import main_bp
         app.register_blueprint(main_bp)
-
-    # with open('model/structure.json', 'r') as f:
-    #     global model
-    #     model = model_from_json(f.read())
-    #     model.load_weights('model/weights.h5')
 
     return app
