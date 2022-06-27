@@ -1,6 +1,7 @@
 const video = document.querySelector('#video');
 const canvas = document.querySelector('#canvas');
 const context = canvas.getContext('2d');
+
 let faces = [];
 
 
@@ -24,7 +25,10 @@ function renderFrame() {
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
         context.drawImage(video, 0, 0);
-        faces.forEach(({ x, y, w, h }) => context.strokeRect(x, y, w, h));
+        faces.forEach(({ x, y, w, h, label, score }) => {
+            context.strokeRect(x, y, w, h);
+            context.fillText(`${label} (${score})`, x + 5, y + 15);
+        });
     }
     window.requestAnimationFrame(renderFrame);
 }
