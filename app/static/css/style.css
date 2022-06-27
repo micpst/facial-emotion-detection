@@ -1,0 +1,24 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#video {
+    display: none;
+}
+
+#canvas {
+    box-shadow: 0 0 1px;
+    border-radius: 3px;
+}
